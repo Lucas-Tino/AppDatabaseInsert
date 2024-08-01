@@ -57,9 +57,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun App(modifier: Modifier = Modifier) {
-    var nome by remember { mutableStateOf("") }
-    var telefone by remember { mutableStateOf("") }
+    var nome by remember {
+        mutableStateOf("")
+    }
+    var telefone by remember {
+        mutableStateOf("")
+    }
 
+    // Podem existir diferenças de estilização no código a seguir
     Column(
         Modifier
             .background(Color.White)
@@ -136,14 +141,19 @@ fun App(modifier: Modifier = Modifier) {
         ) {
             Button(
                 onClick = {
-                    // viewModel.upsertPessoa(pessoa)
-                    nome = ""
-                    telefone = ""
+
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(28, 100, 255)),
             ) {
                 Text("Cadastrar")
             }
+        }
+
+        Row(
+            Modifier
+                .padding(20.dp)
+        ) {
+
         }
     }
 }
